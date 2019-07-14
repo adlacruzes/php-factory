@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - 7.2
+  - 7.3
+  - 7.4snapshot
+
+before_script:
+  - composer self-update
+  - composer clear-cache
+  - composer install --no-interaction
+
+script:
+  - PHP_CS_FIXER_IGNORE_ENV=1
+  - composer ci
+
+notifications:
+    email: false

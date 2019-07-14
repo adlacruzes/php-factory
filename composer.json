@@ -1,0 +1,57 @@
+{
+    "name": "adlacruzes/php-factory",
+    "type": "library",
+    "description": "Factories to generate classes and arrays with default values",
+    "keywords": [
+        "factory",
+        "test",
+        "generate",
+        "default"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrés De la Cruz Escrig"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "adlacruzes/php-base-exception": "^1 || ^2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "fzaninotto/faker": "^1.8",
+        "adlacruzes/php-ci-tools": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Adlacruzes\\Factory\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Adlacruzes\\Factory\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "composer-require-checker": "vendor/bin/ci-tools composer-require-checker",
+        "phpcs": "vendor/bin/ci-tools phpcs --report=source -s",
+        "phpcbf": "vendor/bin/ci-tools phpcbf",
+        "php-cs-fixer": "vendor/bin/ci-tools php-cs-fixer fix --dry-run --diff --verbose --diff-format=udiff --ansi",
+        "phpstan": "vendor/bin/ci-tools phpstan analyse src tests --no-progress --memory-limit=1024M --level=max --ansi",
+        "security-checker": "vendor/bin/ci-tools security-checker security:check",
+        "phpunit": "vendor/bin/phpunit",
+        "ci": [
+            "@composer-require-checker",
+            "@phpcs",
+            "@php-cs-fixer",
+            "@phpstan",
+            "@security-checker",
+            "@phpunit"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
