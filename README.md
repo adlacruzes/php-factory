@@ -1,8 +1,8 @@
 # PHP Factory
-PHP Factory allows to generate classes and arrays with default values and reduce test bloatware.
-
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg?style=flat-square)](https://php.net/)
-[![Build Status](https://travis-ci.org/adlacruzes/php-factory.svg?branch=travis)](https://travis-ci.org/adlacruzes/php-factory)
+[![Build Status](https://travis-ci.org/adlacruzes/php-factory.svg?branch=master)](https://travis-ci.org/adlacruzes/php-factory)
+
+PHP Factory allows to generate classes and arrays with default values and reduce test bloatware.
 
 ## Requirements
 PHP needs to be a minimum version of PHP 7.2.
