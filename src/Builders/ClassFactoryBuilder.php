@@ -46,23 +46,33 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
 
         $parametersFromConstructor = $this->getParametersFromConstructor($class);
 
-        $requiredValues = array_diff($parametersFromConstructor, array_keys($parameters));
+        $requiredFields = array_diff($parametersFromConstructor, array_keys($parameters));
 
-        if (!empty($requiredValues)) {
-            throw new FactoryException('required values: ' . implode(' ', $requiredValues));
+        if (!empty($requiredFields)) {
+            throw new FactoryException(
+                sprintf(
+                    'required fields: %s',
+                    implode(' ', $requiredFields)
+                )
+            );
         }
 
         $invalidValues = array_diff(array_keys($parameters), $parametersFromConstructor);
 
         if (!empty($invalidValues)) {
-            throw new FactoryException('invalid values: ' . implode(' ', $invalidValues));
+            throw new FactoryException(
+                sprintf(
+                    'invalid fields: %s',
+                    implode(' ', $invalidValues)
+                )
+            );
         }
 
         if (null !== $this->valuesToMerge) {
             $invalidMerge = array_diff(array_keys($this->valuesToMerge), $parametersFromConstructor);
 
             if (!empty($invalidMerge)) {
-                throw new FactoryException('invalid values: ' . implode(' ', $invalidMerge));
+                throw new FactoryException('invalid fields: ' . implode(' ', $invalidMerge));
             }
         }
     }

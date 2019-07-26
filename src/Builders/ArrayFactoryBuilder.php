@@ -42,7 +42,12 @@ final class ArrayFactoryBuilder implements FactoryBuilderInterface
             $invalidMerge = array_diff(array_keys($this->valuesToMerge), array_keys($parameters));
 
             if (!empty($invalidMerge)) {
-                throw new FactoryException('invalid values: ' . implode(' ', $invalidMerge));
+                throw new FactoryException(
+                    sprintf(
+                        'invalid fields: %s',
+                        implode(' ', $invalidMerge)
+                    )
+                );
             }
         }
     }

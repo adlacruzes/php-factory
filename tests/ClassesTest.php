@@ -208,7 +208,7 @@ class ClassesTest extends TestCase
     public function testRequiredParametersShouldThrowException()
     {
         $this->expectException(FactoryException::class);
-        $this->expectExceptionMessage('Factory: required values: createdAt');
+        $this->expectExceptionMessage('Factory: required fields: createdAt');
 
         MissingParameterClassFactory::create();
     }
@@ -219,7 +219,7 @@ class ClassesTest extends TestCase
     public function testInvalidParametersShouldThrowException()
     {
         $this->expectException(FactoryException::class);
-        $this->expectExceptionMessage('Factory: invalid values: uuid something');
+        $this->expectExceptionMessage('Factory: invalid fields: uuid something');
 
         InvalidParameterClassFactory::create();
     }
