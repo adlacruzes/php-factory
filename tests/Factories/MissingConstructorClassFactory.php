@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Adlacruzes\Factory\Tests\Factories;
 
-use Adlacruzes\Factory\Tests\Classes\MissingConstructorClass;
-use Adlacruzes\Factory\Factory;
 use Adlacruzes\Factory\Factories\ClassFactory;
 use Adlacruzes\Factory\Factories\FactoryInterface;
+use Adlacruzes\Factory\Factory;
+use Adlacruzes\Factory\Tests\Classes\MissingConstructorClass;
 use Faker\Factory as Faker;
 
 class MissingConstructorClassFactory extends Factory

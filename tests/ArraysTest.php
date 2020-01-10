@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Adlacruzes\Factory\Tests;
 
-use Adlacruzes\Factory\Tests\Factories\ArraysFactory;
 use Adlacruzes\Factory\Exceptions\FactoryException;
+use Adlacruzes\Factory\Tests\Factories\ArraysFactory;
 use PHPUnit\Framework\TestCase;
 
 class ArraysTest extends TestCase

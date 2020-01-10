@@ -6,8 +6,8 @@ namespace Adlacruzes\Factory\Tests\Factories;
 
 use Adlacruzes\Factory\Factories\ClassFactory;
 use Adlacruzes\Factory\Factories\FactoryInterface;
-use Adlacruzes\Factory\Tests\Classes\ValidWithOptionalClass;
 use Adlacruzes\Factory\Factory;
+use Adlacruzes\Factory\Tests\Classes\ValidWithOptionalClass;
 use Faker\Factory as Faker;
 
 class ValidWithOptionalClassFactory extends Factory

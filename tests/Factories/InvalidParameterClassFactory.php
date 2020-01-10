@@ -6,8 +6,8 @@ namespace Adlacruzes\Factory\Tests\Factories;
 
 use Adlacruzes\Factory\Factories\ClassFactory;
 use Adlacruzes\Factory\Factories\FactoryInterface;
-use Adlacruzes\Factory\Tests\Classes\InvalidParameterClass;
 use Adlacruzes\Factory\Factory;
+use Adlacruzes\Factory\Tests\Classes\InvalidParameterClass;
 use Faker\Factory as Faker;
 
 class InvalidParameterClassFactory extends Factory

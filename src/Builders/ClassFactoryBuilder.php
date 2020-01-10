@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Adlacruzes\Factory\Builders;
 
-use Adlacruzes\Factory\Factories\ClassFactory;
 use Adlacruzes\Factory\Exceptions\FactoryException;
+use Adlacruzes\Factory\Factories\ClassFactory;
 
 final class ClassFactoryBuilder implements FactoryBuilderInterface
 {
