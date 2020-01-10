@@ -19,7 +19,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenNoValuesShouldReturnEntity()
+    public function testGivenNoValuesShouldReturnEntity(): void
     {
         $entity = ValidClassFactory::create();
 
@@ -32,7 +32,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenValidValueShouldReturnValue()
+    public function testGivenValidValueShouldReturnValue(): void
     {
         $name = 'New name';
 
@@ -51,7 +51,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenAllValidValuesShouldReturnEntity()
+    public function testGivenAllValidValuesShouldReturnEntity(): void
     {
         $id = 1;
         $name = 'New name';
@@ -83,7 +83,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenInValidValueShouldThrowException()
+    public function testGivenInValidValueShouldThrowException(): void
     {
         $this->expectException(FactoryException::class);
 
@@ -97,7 +97,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenValidTypeValueShouldReturnEntity()
+    public function testGivenValidTypeValueShouldReturnEntity(): void
     {
         $datetime = new DateTime();
         $entity = ValidWithOptionalClassFactory::create(
@@ -115,7 +115,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenValidNullValueShouldReturnEntity()
+    public function testGivenValidNullValueShouldReturnEntity(): void
     {
         $optional = null;
         $entity = ValidWithOptionalClassFactory::create(
@@ -133,7 +133,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testCreateArrayShouldReturnArray()
+    public function testCreateArrayShouldReturnArray(): void
     {
         $entities = ValidClassFactory::createArray();
 
@@ -150,7 +150,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testCreateArrayShouldReturnArrayOfNElements()
+    public function testCreateArrayShouldReturnArrayOfNElements(): void
     {
         $n = 9;
         $entities = ValidClassFactory::createArray($n);
@@ -164,7 +164,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testCreateArrayShouldReturnArrayOf1Element()
+    public function testCreateArrayShouldReturnArrayOf1Element(): void
     {
         $entities = ValidClassFactory::createArray();
 
@@ -177,7 +177,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testCreateArrayWithValuesShouldReturnArrayOfNElements()
+    public function testCreateArrayWithValuesShouldReturnArrayOfNElements(): void
     {
         $n = 9;
         $name = 'fixed';
@@ -205,7 +205,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testRequiredParametersShouldThrowException()
+    public function testRequiredParametersShouldThrowException(): void
     {
         $this->expectException(FactoryException::class);
         $this->expectExceptionMessage('Factory: required fields: createdAt');
@@ -216,7 +216,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testInvalidParametersShouldThrowException()
+    public function testInvalidParametersShouldThrowException(): void
     {
         $this->expectException(FactoryException::class);
         $this->expectExceptionMessage('Factory: invalid fields: uuid something');
@@ -227,7 +227,7 @@ class ClassesTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testNoConstructorShouldThrowException()
+    public function testNoConstructorShouldThrowException(): void
     {
         $this->expectException(FactoryException::class);
         $this->expectExceptionMessage('Factory: constructor not found');

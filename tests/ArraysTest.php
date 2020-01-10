@@ -13,7 +13,7 @@ class ArraysTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenNoValuesShouldReturnArray()
+    public function testGivenNoValuesShouldReturnArray(): void
     {
         $array = ArraysFactory::create();
 
@@ -25,7 +25,7 @@ class ArraysTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenValidValueShouldReturnValue()
+    public function testGivenValidValueShouldReturnValue(): void
     {
         $number = 'New number';
 
@@ -44,7 +44,7 @@ class ArraysTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenInValidValueShouldThrowException()
+    public function testGivenInValidValueShouldThrowException(): void
     {
         $this->expectException(FactoryException::class);
 
@@ -61,7 +61,7 @@ class ArraysTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenAllValidValuesShouldReturnArray()
+    public function testGivenAllValidValuesShouldReturnArray(): void
     {
         $expected = [
             'one' => 1,
@@ -88,7 +88,7 @@ class ArraysTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testGivenValidNullValueShouldReturnEntity()
+    public function testGivenValidNullValueShouldReturnEntity(): void
     {
         $array = ArraysFactory::create(
             [
@@ -104,7 +104,7 @@ class ArraysTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testCreateArrayShouldReturnArray()
+    public function testCreateArrayShouldReturnArray(): void
     {
         $arrays = ArraysFactory::createArray();
 
@@ -122,7 +122,7 @@ class ArraysTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testCreateArrayShouldReturnArrayOfNElements()
+    public function testCreateArrayShouldReturnArrayOfNElements(): void
     {
         $n = 9;
         $arrays = ArraysFactory::createArray($n);
@@ -136,7 +136,7 @@ class ArraysTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testCreateArrayShouldReturnArrayOf1Element()
+    public function testCreateArrayShouldReturnArrayOf1Element(): void
     {
         $arrays = ArraysFactory::createArray();
 
@@ -149,7 +149,7 @@ class ArraysTest extends TestCase
     /**
      * @throws \Exception
      */
-    public function testCreateArrayWithValuesShouldReturnArrayOfNElements()
+    public function testCreateArrayWithValuesShouldReturnArrayOfNElements(): void
     {
         $n = 9;
         $two = 2;
