@@ -15,14 +15,14 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
     private $factoryType;
 
     /**
-     * @var array|null
+     * @var array<mixed>|null
      */
     private $valuesToMerge;
 
     /**
      * ClassFactoryBuilder constructor.
      * @param ClassFactory $factoryType
-     * @param array|null $valuesToMerge
+     * @param array<mixed>|null $valuesToMerge
      */
     public function __construct(ClassFactory $factoryType, array $valuesToMerge = null)
     {
@@ -34,7 +34,7 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
      * @throws FactoryException
      * @throws \ReflectionException
      */
-    public function check()
+    public function check(): void
     {
         $class = $this->factoryType->get()['class'];
 
@@ -77,6 +77,10 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
         }
     }
 
+    /**
+     * @param array<mixed>|null $values
+     * @return \stdclass
+     */
     public function build(array $values = null)
     {
         $class = $this->factoryType->get()['class'];
@@ -91,8 +95,8 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
     }
 
     /**
-     * @param string $class
-     * @return array
+     * @param class-string $class
+     * @return array<mixed>
      * @throws FactoryException
      * @throws \ReflectionException
      */

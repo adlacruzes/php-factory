@@ -13,7 +13,7 @@ abstract class Factory
     abstract protected static function setFactory(): FactoryInterface;
 
     /**
-     * @param array|null $values
+     * @param array<mixed>|null $values
      * @return mixed
      * @throws FactoryException
      * @throws \ReflectionException
@@ -31,7 +31,7 @@ abstract class Factory
 
     /**
      * @param int $n
-     * @param array|null $values
+     * @param array<mixed>|null $values
      * @return mixed
      * @throws FactoryException
      * @throws \ReflectionException
@@ -48,7 +48,7 @@ abstract class Factory
 
     /**
      * @param FactoryInterface $factory
-     * @param array|null $values
+     * @param array<mixed>|null $values
      * @return FactoryBuilderInterface
      * @throws \ReflectionException
      */

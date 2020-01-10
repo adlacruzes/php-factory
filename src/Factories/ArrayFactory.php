@@ -7,13 +7,13 @@ namespace Adlacruzes\Factory\Factories;
 final class ArrayFactory implements FactoryInterface
 {
     /**
-     * @var array
+     * @var array<mixed>
      */
     private $defaultValues;
 
     /**
      * ArrayFactoryType constructor.
-     * @param array $defaultValues
+     * @param array<mixed> $defaultValues
      */
     public function __construct(array $defaultValues)
     {

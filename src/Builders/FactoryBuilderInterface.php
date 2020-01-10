@@ -6,7 +6,10 @@ namespace Adlacruzes\Factory\Builders;
 
 interface FactoryBuilderInterface
 {
-    public function check();
+    public function check(): void;
 
+    /**
+     * @return mixed
+     */
     public function build();
 }

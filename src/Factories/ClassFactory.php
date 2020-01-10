@@ -12,14 +12,14 @@ final class ClassFactory implements FactoryInterface
     private $class;
 
     /**
-     * @var array
+     * @var array<mixed>
      */
     private $defaultValues;
 
     /**
      * ClassParser constructor.
      * @param string $class
-     * @param array $defaultValues
+     * @param array<mixed> $defaultValues
      */
     public function __construct(string $class, array $defaultValues)
     {
