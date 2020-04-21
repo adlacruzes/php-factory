@@ -53,10 +53,9 @@ final class ArrayFactoryBuilder implements FactoryBuilderInterface
     }
 
     /**
-     * @param array<mixed>|null $values
      * @return array<mixed>
      */
-    public function build(array $values = null)
+    public function build()
     {
         $parameters = $this->factoryType->get()['defaultValues'];
 

@@ -78,10 +78,9 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
     }
 
     /**
-     * @param array<mixed>|null $values
      * @return \stdclass
      */
-    public function build(array $values = null)
+    public function build()
     {
         $class = $this->factoryType->get()['class'];
 
