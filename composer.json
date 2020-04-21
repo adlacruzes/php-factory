@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^7.2",
-        "adlacruzes/php-base-exception": "^1 || ^2"
+        "adlacruzes/php-base-exception": "^2"
     },
     "require-dev": {
         "phpunit/phpunit": "^8",
