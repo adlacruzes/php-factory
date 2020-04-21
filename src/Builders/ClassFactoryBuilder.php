@@ -80,7 +80,7 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
     /**
      * @return \stdclass
      */
-    public function build()
+    public function create()
     {
         $class = $this->factoryType->get()['class'];
 

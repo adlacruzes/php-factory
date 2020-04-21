@@ -26,7 +26,7 @@ abstract class Factory
 
         $builder->check();
 
-        return $builder->build();
+        return $builder->create();
     }
 
     /**

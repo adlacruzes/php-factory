@@ -11,5 +11,5 @@ interface FactoryBuilderInterface
     /**
      * @return mixed
      */
-    public function build();
+    public function create();
 }

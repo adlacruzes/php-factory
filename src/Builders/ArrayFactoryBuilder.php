@@ -55,7 +55,7 @@ final class ArrayFactoryBuilder implements FactoryBuilderInterface
     /**
      * @return array<mixed>
      */
-    public function build()
+    public function create()
     {
         $parameters = $this->factoryType->get()['defaultValues'];
 
