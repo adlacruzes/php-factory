@@ -6,10 +6,12 @@ namespace Adlacruzes\Factory\Tests;
 
 use Adlacruzes\Factory\Exceptions\FactoryException;
 use Adlacruzes\Factory\Tests\Classes\ValidClass;
+use Adlacruzes\Factory\Tests\Classes\ValidWithNullableClass;
 use Adlacruzes\Factory\Tests\Factories\InvalidParameterClassFactory;
 use Adlacruzes\Factory\Tests\Factories\MissingConstructorClassFactory;
 use Adlacruzes\Factory\Tests\Factories\MissingParameterClassFactory;
 use Adlacruzes\Factory\Tests\Factories\ValidClassFactory;
+use Adlacruzes\Factory\Tests\Factories\ValidWithNullableClassFactory;
 use Adlacruzes\Factory\Tests\Factories\ValidWithOptionalClassFactory;
 use DateTime;
 use PHPUnit\Framework\TestCase;
@@ -233,5 +235,18 @@ class ClassesTest extends TestCase
         $this->expectExceptionMessage('Factory: constructor not found');
 
         MissingConstructorClassFactory::create();
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function testGivenNullValuesShouldReturnClass(): void
+    {
+        $entity = ValidWithNullableClassFactory::create();
+
+        $this->assertInstanceOf(
+            ValidWithNullableClass::class,
+            $entity
+        );
     }
 }
