@@ -115,4 +115,29 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
 
         return $params;
     }
+
+    /**
+     * @param class-string $class
+     * @return array<mixed>
+     * @throws FactoryException
+     * @throws \ReflectionException
+     */
+    private static function getNullableParametersFromConstructor(string $class)
+    {
+        $reflection = new \ReflectionClass($class);
+        $constructor = $reflection->getConstructor();
+
+        if (null === $constructor) {
+            throw new FactoryException('constructor not found for class ' . $class);
+        }
+
+        $params = [];
+        foreach ($constructor->getParameters() as $param) {
+            if ($param->allowsNull()) {
+                $params[] = $param->getName();
+            }
+        }
+
+        return $params;
+    }
 }
