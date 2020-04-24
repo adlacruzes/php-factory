@@ -9,6 +9,11 @@ use Adlacruzes\Factory\Factories\FactoryInterface;
 use Adlacruzes\Factory\Factory;
 use Adlacruzes\Factory\Tests\Classes\ValidWithNullableClass;
 
+/**
+ * @method static ValidWithNullableClass create(array $values = null)
+ * @method static ValidWithNullableClass createNullable(array $values = null)
+ * @method static ValidWithNullableClass[] createArray(int $n = 1, array $values = null)
+ */
 class ValidWithNullableClassFactory extends Factory
 {
     protected static function setFactory(): FactoryInterface

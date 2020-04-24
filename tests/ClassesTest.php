@@ -249,4 +249,22 @@ class ClassesTest extends TestCase
             $entity
         );
     }
+
+    /**
+     * @throws \Exception
+     */
+    public function testGivenNullValuesShouldReturnClassWithNulls(): void
+    {
+        $entity = ValidWithNullableClassFactory::createNullable();
+
+        $this->assertInstanceOf(
+            ValidWithNullableClass::class,
+            $entity
+        );
+
+        $this->assertNull($entity->getA());
+        $this->assertNull($entity->getB());
+        $this->assertNull($entity->getC());
+        $this->assertNull($entity->getD());
+    }
 }
