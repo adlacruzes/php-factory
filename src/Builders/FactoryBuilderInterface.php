@@ -12,4 +12,9 @@ interface FactoryBuilderInterface
      * @return mixed
      */
     public function create();
+
+    /**
+     * @return mixed
+     */
+    public function createNullable();
 }

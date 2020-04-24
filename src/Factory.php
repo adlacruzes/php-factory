@@ -30,6 +30,23 @@ abstract class Factory
     }
 
     /**
+     * @param array<mixed>|null $values
+     * @return mixed
+     * @throws FactoryException
+     * @throws \ReflectionException
+     */
+    public static function createNullable(array $values = null)
+    {
+        $factory = (new static())::setFactory();
+
+        $builder = self::getBuilder($factory, $values);
+
+        $builder->check();
+
+        return $builder->createNullable();
+    }
+
+    /**
      * @param int $n
      * @param array<mixed>|null $values
      * @return mixed

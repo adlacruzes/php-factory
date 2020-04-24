@@ -65,4 +65,8 @@ final class ArrayFactoryBuilder implements FactoryBuilderInterface
 
         return $parameters;
     }
+
+    public function createNullable()
+    {
+    }
 }

@@ -94,6 +94,26 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
     }
 
     /**
+     * @return \stdclass
+     */
+    public function createNullable()
+    {
+        $class = $this->factoryType->get()['class'];
+
+        $parameters = $this->factoryType->get()['defaultValues'];
+
+        $nullableParameters = $this->getNullableParametersFromConstructor($class);
+
+        $parameters = array_merge($parameters, $nullableParameters);
+
+        if (null !== $this->valuesToMerge) {
+            $parameters = array_merge($parameters, $this->valuesToMerge);
+        }
+
+        return new $class(...array_values($parameters));
+    }
+
+    /**
      * @param class-string $class
      * @return array<mixed>
      * @throws FactoryException
