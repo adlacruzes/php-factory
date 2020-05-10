@@ -130,7 +130,7 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
 
         $params = [];
         foreach ($constructor->getParameters() as $param) {
-            $params[] = $param->getName();
+            $params[$param->getName()] = $param->getName();
         }
 
         return $params;
@@ -154,7 +154,7 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
         $params = [];
         foreach ($constructor->getParameters() as $param) {
             if ($param->allowsNull()) {
-                $params[] = $param->getName();
+                $params[$param->getName()] = null;
             }
         }
 
