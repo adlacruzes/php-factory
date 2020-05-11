@@ -8,6 +8,7 @@ use Adlacruzes\Factory\Exceptions\FactoryException;
 use Adlacruzes\Factory\Tests\Classes\ValidClass;
 use Adlacruzes\Factory\Tests\Classes\ValidWithAllNullablePropertiesClass;
 use Adlacruzes\Factory\Tests\Classes\ValidWithSomeNullablePropertiesClass;
+use Adlacruzes\Factory\Tests\Classes\ValidWithTypedNullablePropertiesClass;
 use Adlacruzes\Factory\Tests\Factories\InvalidParameterClassFactory;
 use Adlacruzes\Factory\Tests\Factories\MissingConstructorClassFactory;
 use Adlacruzes\Factory\Tests\Factories\MissingParameterClassFactory;
@@ -15,6 +16,7 @@ use Adlacruzes\Factory\Tests\Factories\ValidClassFactory;
 use Adlacruzes\Factory\Tests\Factories\ValidWithAllNullablePropertiesClassFactory;
 use Adlacruzes\Factory\Tests\Factories\ValidWithOptionalClassFactory;
 use Adlacruzes\Factory\Tests\Factories\ValidWithSomeNullablePropertiesClassFactory;
+use Adlacruzes\Factory\Tests\Factories\ValidWithTypedNullablePropertiesClassFactory;
 use DateTime;
 use PHPUnit\Framework\TestCase;
 
@@ -281,6 +283,26 @@ class ClassesTest extends TestCase
 
         $this->assertInstanceOf(
             ValidWithSomeNullablePropertiesClass::class,
+            $entity
+        );
+
+        $this->assertNull($entity->getA());
+        $this->assertNull($entity->getB());
+        $this->assertNotNull($entity->getC());
+        $this->assertNull($entity->getD());
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function testGivenTypedNullValuesShouldReturnClassWithNulls(): void
+    {
+        $entity = ValidWithTypedNullablePropertiesClassFactory::createNullable([
+            'c' => true,
+        ]);
+
+        $this->assertInstanceOf(
+            ValidWithTypedNullablePropertiesClass::class,
             $entity
         );
 
