@@ -68,5 +68,19 @@ final class ArrayFactoryBuilder implements FactoryBuilderInterface
 
     public function createNullable()
     {
+        $parameters = $this->factoryType->get()['defaultValues'];
+
+        $nullableParameters = [];
+        foreach ($parameters as $key => $value) {
+            $nullableParameters[$key] = null;
+        }
+
+        if (null !== $this->valuesToMerge) {
+            $parameters = array_merge($parameters, $nullableParameters, $this->valuesToMerge);
+        } else {
+            $parameters = array_merge($parameters, $nullableParameters);
+        }
+
+        return $parameters;
     }
 }

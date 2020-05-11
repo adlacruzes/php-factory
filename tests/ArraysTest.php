@@ -173,4 +173,57 @@ class ArraysTest extends TestCase
             $this->assertEquals($four, $array['four']);
         }
     }
+
+    /**
+     * @throws \Exception
+     */
+    public function testWhenCallingCreateNullableGivenNoValuesShouldReturnNullableArray(): void
+    {
+        $array = ArraysFactory::createNullable();
+
+        foreach ($array as $key => $value) {
+            $this->assertNull($value);
+        }
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function testWhenCallingCreateNullableGivenSomeValuesShouldReturnNullableArray(): void
+    {
+        $array = ArraysFactory::createNullable([
+            'one' => 'something',
+            'four' => 'never mind',
+        ]);
+
+        $this->assertEquals(
+            [
+                'one' => 'something',
+                'two' => null,
+                'three' => null,
+                'four' => 'never mind',
+            ],
+            $array
+        );
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function testWhenCallingCreateNullableGivenAllValuesShouldReturnArray(): void
+    {
+        $values = [
+            'one' => '1',
+            'two' => '2',
+            'three' => '3',
+            'four' => '4',
+        ];
+
+        $array = ArraysFactory::createNullable($values);
+
+        $this->assertEquals(
+            $values,
+            $array
+        );
+    }
 }
