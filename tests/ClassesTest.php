@@ -6,12 +6,12 @@ namespace Adlacruzes\Factory\Tests;
 
 use Adlacruzes\Factory\Exceptions\FactoryException;
 use Adlacruzes\Factory\Tests\Classes\ValidClass;
-use Adlacruzes\Factory\Tests\Classes\ValidWithNullableClass;
+use Adlacruzes\Factory\Tests\Classes\ValidWithAllNullablePropertiesClass;
 use Adlacruzes\Factory\Tests\Factories\InvalidParameterClassFactory;
 use Adlacruzes\Factory\Tests\Factories\MissingConstructorClassFactory;
 use Adlacruzes\Factory\Tests\Factories\MissingParameterClassFactory;
 use Adlacruzes\Factory\Tests\Factories\ValidClassFactory;
-use Adlacruzes\Factory\Tests\Factories\ValidWithNullableClassFactory;
+use Adlacruzes\Factory\Tests\Factories\ValidWithAllNullablePropertiesClassFactory;
 use Adlacruzes\Factory\Tests\Factories\ValidWithOptionalClassFactory;
 use DateTime;
 use PHPUnit\Framework\TestCase;
@@ -242,10 +242,10 @@ class ClassesTest extends TestCase
      */
     public function testGivenNullValuesShouldReturnClass(): void
     {
-        $entity = ValidWithNullableClassFactory::create();
+        $entity = ValidWithAllNullablePropertiesClassFactory::create();
 
         $this->assertInstanceOf(
-            ValidWithNullableClass::class,
+            ValidWithAllNullablePropertiesClass::class,
             $entity
         );
     }
@@ -255,10 +255,10 @@ class ClassesTest extends TestCase
      */
     public function testGivenNullValuesShouldReturnClassWithNulls(): void
     {
-        $entity = ValidWithNullableClassFactory::createNullable();
+        $entity = ValidWithAllNullablePropertiesClassFactory::createNullable();
 
         $this->assertInstanceOf(
-            ValidWithNullableClass::class,
+            ValidWithAllNullablePropertiesClass::class,
             $entity
         );
 

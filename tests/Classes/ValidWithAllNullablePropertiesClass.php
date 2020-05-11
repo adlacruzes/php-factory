@@ -6,7 +6,7 @@ namespace Adlacruzes\Factory\Tests\Classes;
 
 use DateTime;
 
-class ValidWithNullableClass
+class ValidWithAllNullablePropertiesClass
 {
     /**
      * @var int|null
