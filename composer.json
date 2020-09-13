@@ -36,7 +36,7 @@
     "scripts": {
         "composer-require-checker": "vendor/bin/ci-tools composer-require-checker",
         "php-cs-fixer": "vendor/bin/ci-tools php-cs-fixer fix --dry-run --diff --verbose --diff-format=udiff --show-progress=none --using-cache=yes --ansi",
-        "phpstan": "vendor/bin/ci-tools phpstan analyse src tests --no-progress --memory-limit=1024M --level=max --ansi",
+        "phpstan": "vendor/bin/ci-tools phpstan analyse --no-progress --ansi",
         "security-checker": "vendor/bin/ci-tools security-checker security:check",
         "phpunit": "vendor/bin/phpunit",
         "ci": [
