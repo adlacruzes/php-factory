@@ -35,15 +35,12 @@
     },
     "scripts": {
         "composer-require-checker": "vendor/bin/ci-tools composer-require-checker",
-        "phpcs": "vendor/bin/ci-tools phpcs --report=source -s",
-        "phpcbf": "vendor/bin/ci-tools phpcbf",
-        "php-cs-fixer": "vendor/bin/ci-tools php-cs-fixer fix --dry-run --diff --verbose --diff-format=udiff --ansi",
+        "php-cs-fixer": "vendor/bin/ci-tools php-cs-fixer fix --dry-run --diff --verbose --diff-format=udiff --show-progress=none --using-cache=yes --ansi",
         "phpstan": "vendor/bin/ci-tools phpstan analyse src tests --no-progress --memory-limit=1024M --level=max --ansi",
         "security-checker": "vendor/bin/ci-tools security-checker security:check",
         "phpunit": "vendor/bin/phpunit",
         "ci": [
             "@composer-require-checker",
-            "@phpcs",
             "@php-cs-fixer",
             "@phpstan",
             "@security-checker",
