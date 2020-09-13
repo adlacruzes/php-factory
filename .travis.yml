@@ -4,14 +4,17 @@ php:
   - 7.2
   - 7.3
   - 7.4
-
-before_script:
-  - composer self-update
-  - composer clear-cache
-  - composer install --no-interaction
+  - nightly
 
 script:
-  - composer ci
+  - if [[ $TRAVIS_PHP_VERSION == "nightly" ]]; then
+    composer config platform.php 7.4;
+    composer install --no-interaction;
+    composer run phpunit;
+    else
+    composer install --no-interaction;
+    composer run ci;
+    fi
 
 notifications:
-    email: false
+  email: false
