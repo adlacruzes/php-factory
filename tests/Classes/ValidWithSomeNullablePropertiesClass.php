@@ -35,7 +35,7 @@ class ValidWithSomeNullablePropertiesClass
      * @param bool $c
      * @param DateTime|null $d
      */
-    public function __construct($a = null, $b, $c, $d = null)
+    public function __construct($a, $b, $c, $d = null)
     {
         $this->a = $a;
         $this->b = $b;
