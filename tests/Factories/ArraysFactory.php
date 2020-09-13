@@ -7,20 +7,17 @@ namespace Adlacruzes\Factory\Tests\Factories;
 use Adlacruzes\Factory\Factories\ArrayFactory;
 use Adlacruzes\Factory\Factories\FactoryInterface;
 use Adlacruzes\Factory\Factory;
-use Faker\Factory as Faker;
 
 class ArraysFactory extends Factory
 {
     protected static function setFactory(): FactoryInterface
     {
-        $faker = Faker::create();
-
         return new ArrayFactory(
             [
-                'one' => $faker->randomNumber(),
-                'two' => $faker->randomNumber(),
-                'three' => $faker->randomNumber(),
-                'four' => $faker->randomNumber(),
+                'one' => 42,
+                'two' => 43,
+                'three' => 44,
+                'four' => 45,
             ]
         );
     }

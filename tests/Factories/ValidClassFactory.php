@@ -8,7 +8,6 @@ use Adlacruzes\Factory\Factories\ClassFactory;
 use Adlacruzes\Factory\Factories\FactoryInterface;
 use Adlacruzes\Factory\Factory;
 use Adlacruzes\Factory\Tests\Classes\ValidClass;
-use Faker\Factory as Faker;
 
 /**
  * @method static ValidClass create(array $values = null)
@@ -18,15 +17,13 @@ class ValidClassFactory extends Factory
 {
     protected static function setFactory(): FactoryInterface
     {
-        $faker = Faker::create();
-
         return new ClassFactory(
             ValidClass::class,
             [
-                'id' => $faker->randomNumber(),
-                'name' => $faker->name,
-                'isEnabled' => $faker->boolean,
-                'createdAt' => $faker->dateTime,
+                'id' => 42,
+                'name' => 'name',
+                'isEnabled' => true,
+                'createdAt' => new \DateTime(),
             ]
         );
     }

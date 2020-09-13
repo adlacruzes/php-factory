@@ -8,19 +8,16 @@ use Adlacruzes\Factory\Factories\ClassFactory;
 use Adlacruzes\Factory\Factories\FactoryInterface;
 use Adlacruzes\Factory\Factory;
 use Adlacruzes\Factory\Tests\Classes\MissingParameterClass;
-use Faker\Factory as Faker;
 
 class MissingParameterClassFactory extends Factory
 {
     protected static function setFactory(): FactoryInterface
     {
-        $faker = Faker::create();
-
         return new ClassFactory(
             MissingParameterClass::class,
             [
-                'id' => $faker->randomNumber(),
-                'optional' => $faker->optional()->name,
+                'id' => 42,
+                'optional' => 'optional',
             ]
         );
     }
