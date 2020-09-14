@@ -17,6 +17,7 @@ The main purpose of this library is help with the creation of tests and fixtures
 - [Methods](#methods)
     - [create](#create)
     - [createArray](#create-array)
+    - [createNullable](#create-nullable)
 - [Exceptions](#exceptions)
 
 ## Requirements
@@ -196,7 +197,7 @@ class ValidClass (4) {
 
 ## Methods
 
-There are two methods for every factory. They can be called with no arguments or can receive an array of values to override the defaults parameters.
+There are three methods for every factory. They can be called with no arguments or can receive an array of values to override the defaults parameters.
 
 ### create
 
@@ -249,6 +250,30 @@ Returns an array of `n` predefined factories with the new specified values.
 ```php
 SampleFactory::create(
     n,
+    [
+        'field' => 'value'
+    ]
+);
+```
+
+### create nullable
+
+CreateNullable returns an instance of the factory with all possibly null values.
+
+#### `createNullable()`
+
+Returns the predefined factory with nulls.
+
+```php
+SampleFactory::createNullable();
+```
+
+#### `createNullable(array)`
+
+Returns the predefined factory with all possibly null values except the new specified ones.
+
+```php
+SampleFactory::createNullable(
     [
         'field' => 'value'
     ]
