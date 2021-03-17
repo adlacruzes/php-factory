@@ -19,8 +19,15 @@
         "adlacruzes/php-base-exception": "^2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8 || ^9.0",
-        "adlacruzes/php-ci-tools": "^1"
+        "enlightn/security-checker": "^1.7",
+        "ergebnis/composer-normalize": "^2.13.3",
+        "friendsofphp/php-cs-fixer": "^v2.18.3",
+        "phpstan/phpstan": "^0.12.81",
+        "phpunit/phpunit": "^8 || ^9.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
     },
     "autoload": {
         "psr-4": {
@@ -33,21 +40,17 @@
         }
     },
     "scripts": {
-        "composer-require-checker": "vendor/bin/ci-tools composer-require-checker",
-        "php-cs-fixer": "vendor/bin/ci-tools php-cs-fixer fix --dry-run --diff --verbose --diff-format=udiff --show-progress=none --using-cache=yes --ansi",
-        "phpstan": "vendor/bin/ci-tools phpstan analyse --no-progress --ansi",
-        "security-checker": "vendor/bin/ci-tools security-checker security:check",
-        "phpunit": "vendor/bin/phpunit",
         "ci": [
-            "@composer-require-checker",
+            "@composer-normalize",
             "@php-cs-fixer",
             "@phpstan",
             "@security-checker",
             "@phpunit"
-        ]
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true
+        ],
+        "composer-normalize": "@composer normalize --dry-run",
+        "php-cs-fixer": "vendor/bin/php-cs-fixer fix --dry-run --diff --verbose --diff-format=udiff --show-progress=none --using-cache=yes --ansi",
+        "phpstan": "vendor/bin/phpstan analyse --no-progress --ansi",
+        "phpunit": "vendor/bin/phpunit",
+        "security-checker": "vendor/bin/security-checker security:check"
     }
 }
