@@ -44,24 +44,24 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
             throw new FactoryException('class not found');
         }
 
-        $parametersFromConstructor = $this->getParametersFromConstructor($class);
+        $parametersFromConstructor = self::getParametersFromConstructor($class);
 
         $requiredFields = array_diff($parametersFromConstructor, array_keys($parameters));
 
-        if (!empty($requiredFields)) {
+        if (0 !== count($requiredFields)) {
             throw new FactoryException(sprintf('required fields: %s', implode(' ', $requiredFields)));
         }
 
         $invalidValues = array_diff(array_keys($parameters), $parametersFromConstructor);
 
-        if (!empty($invalidValues)) {
+        if (0 !== count($invalidValues)) {
             throw new FactoryException(sprintf('invalid fields: %s', implode(' ', $invalidValues)));
         }
 
         if (null !== $this->valuesToMerge) {
             $invalidMerge = array_diff(array_keys($this->valuesToMerge), $parametersFromConstructor);
 
-            if (!empty($invalidMerge)) {
+            if (0 !== count($invalidMerge)) {
                 throw new FactoryException('invalid fields: ' . implode(' ', $invalidMerge));
             }
         }
@@ -92,7 +92,7 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
 
         $parameters = $this->factoryType->get()['defaultValues'];
 
-        $nullableParameters = $this->getNullableParametersFromConstructor($class);
+        $nullableParameters = self::getNullableParametersFromConstructor($class);
 
         $parameters = array_merge($parameters, $nullableParameters);
 

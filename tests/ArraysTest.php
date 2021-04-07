@@ -17,7 +17,7 @@ class ArraysTest extends TestCase
     {
         $array = ArraysFactory::create();
 
-        $this->assertIsArray(
+        self::assertIsArray(
             $array
         );
     }
@@ -35,7 +35,7 @@ class ArraysTest extends TestCase
             ]
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             $number,
             $array['two']
         );
@@ -79,7 +79,7 @@ class ArraysTest extends TestCase
             ]
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             $expected,
             $actual
         );
@@ -96,7 +96,7 @@ class ArraysTest extends TestCase
             ]
         );
 
-        $this->assertNull(
+        self::assertNull(
             $array['two']
         );
     }
@@ -108,12 +108,12 @@ class ArraysTest extends TestCase
     {
         $arrays = ArraysFactory::createArray();
 
-        $this->assertIsArray(
+        self::assertIsArray(
             $arrays
         );
 
         foreach ($arrays as $array) {
-            $this->assertIsArray(
+            self::assertIsArray(
                 $array
             );
         }
@@ -127,7 +127,7 @@ class ArraysTest extends TestCase
         $n = 9;
         $arrays = ArraysFactory::createArray($n);
 
-        $this->assertCount(
+        self::assertCount(
             $n,
             $arrays
         );
@@ -140,7 +140,7 @@ class ArraysTest extends TestCase
     {
         $arrays = ArraysFactory::createArray();
 
-        $this->assertCount(
+        self::assertCount(
             1,
             $arrays
         );
@@ -163,14 +163,14 @@ class ArraysTest extends TestCase
             ]
         );
 
-        $this->assertCount(
+        self::assertCount(
             $n,
             $arrays
         );
 
         foreach ($arrays as $array) {
-            $this->assertEquals($two, $array['two']);
-            $this->assertEquals($four, $array['four']);
+            self::assertEquals($two, $array['two']);
+            self::assertEquals($four, $array['four']);
         }
     }
 
@@ -182,7 +182,7 @@ class ArraysTest extends TestCase
         $array = ArraysFactory::createNullable();
 
         foreach ($array as $key => $value) {
-            $this->assertNull($value);
+            self::assertNull($value);
         }
     }
 
@@ -196,7 +196,7 @@ class ArraysTest extends TestCase
             'four' => 'never mind',
         ]);
 
-        $this->assertEquals(
+        self::assertEquals(
             [
                 'one' => 'something',
                 'two' => null,
@@ -221,7 +221,7 @@ class ArraysTest extends TestCase
 
         $array = ArraysFactory::createNullable($values);
 
-        $this->assertEquals(
+        self::assertEquals(
             $values,
             $array
         );

@@ -29,7 +29,7 @@ class ClassesTest extends TestCase
     {
         $entity = ValidClassFactory::create();
 
-        $this->assertInstanceOf(
+        self::assertInstanceOf(
             ValidClass::class,
             $entity
         );
@@ -48,7 +48,7 @@ class ClassesTest extends TestCase
             ]
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             $name,
             $entity->getName()
         );
@@ -80,7 +80,7 @@ class ClassesTest extends TestCase
             ]
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             $expected,
             $actual
         );
@@ -112,7 +112,7 @@ class ClassesTest extends TestCase
             ]
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             $datetime,
             $entity->getCreatedAt()
         );
@@ -130,7 +130,7 @@ class ClassesTest extends TestCase
             ]
         );
 
-        $this->assertEquals(
+        self::assertEquals(
             $optional,
             $entity->getOptional()
         );
@@ -143,11 +143,11 @@ class ClassesTest extends TestCase
     {
         $entities = ValidClassFactory::createArray();
 
-        $this->assertIsArray(
+        self::assertIsArray(
             $entities
         );
 
-        $this->assertContainsOnlyInstancesOf(
+        self::assertContainsOnlyInstancesOf(
             ValidClass::class,
             $entities
         );
@@ -161,7 +161,7 @@ class ClassesTest extends TestCase
         $n = 9;
         $entities = ValidClassFactory::createArray($n);
 
-        $this->assertCount(
+        self::assertCount(
             $n,
             $entities
         );
@@ -174,7 +174,7 @@ class ClassesTest extends TestCase
     {
         $entities = ValidClassFactory::createArray();
 
-        $this->assertCount(
+        self::assertCount(
             1,
             $entities
         );
@@ -197,14 +197,14 @@ class ClassesTest extends TestCase
             ]
         );
 
-        $this->assertCount(
+        self::assertCount(
             $n,
             $entities
         );
 
         foreach ($entities as $entity) {
-            $this->assertEquals($name, $entity->getName());
-            $this->assertEquals($createdAt, $entity->getCreatedAt());
+            self::assertEquals($name, $entity->getName());
+            self::assertEquals($createdAt, $entity->getCreatedAt());
         }
     }
 
@@ -248,7 +248,7 @@ class ClassesTest extends TestCase
     {
         $entity = ValidWithAllNullablePropertiesClassFactory::create();
 
-        $this->assertInstanceOf(
+        self::assertInstanceOf(
             ValidWithAllNullablePropertiesClass::class,
             $entity
         );
@@ -261,15 +261,15 @@ class ClassesTest extends TestCase
     {
         $entity = ValidWithAllNullablePropertiesClassFactory::createNullable();
 
-        $this->assertInstanceOf(
+        self::assertInstanceOf(
             ValidWithAllNullablePropertiesClass::class,
             $entity
         );
 
-        $this->assertNull($entity->getA());
-        $this->assertNull($entity->getB());
-        $this->assertNull($entity->getC());
-        $this->assertNull($entity->getD());
+        self::assertNull($entity->getA());
+        self::assertNull($entity->getB());
+        self::assertNull($entity->getC());
+        self::assertNull($entity->getD());
     }
 
     /**
@@ -281,15 +281,15 @@ class ClassesTest extends TestCase
             'c' => true,
         ]);
 
-        $this->assertInstanceOf(
+        self::assertInstanceOf(
             ValidWithSomeNullablePropertiesClass::class,
             $entity
         );
 
-        $this->assertNull($entity->getA());
-        $this->assertNull($entity->getB());
-        $this->assertNotNull($entity->getC());
-        $this->assertNull($entity->getD());
+        self::assertNull($entity->getA());
+        self::assertNull($entity->getB());
+        self::assertNotNull($entity->getC());
+        self::assertNull($entity->getD());
     }
 
     /**
@@ -301,14 +301,14 @@ class ClassesTest extends TestCase
             'c' => true,
         ]);
 
-        $this->assertInstanceOf(
+        self::assertInstanceOf(
             ValidWithTypedNullablePropertiesClass::class,
             $entity
         );
 
-        $this->assertNull($entity->getA());
-        $this->assertNull($entity->getB());
-        $this->assertNotNull($entity->getC());
-        $this->assertNull($entity->getD());
+        self::assertNull($entity->getA());
+        self::assertNull($entity->getB());
+        self::assertNotNull($entity->getC());
+        self::assertNull($entity->getD());
     }
 }
