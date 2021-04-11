@@ -1,7 +1,7 @@
 # PHP Factory
 
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg?style=flat-square)](https://php.net/)
-[![Packagist](https://img.shields.io/packagist/v/adlacruzes/php-factory?style=flat-square)](https://packagist.org/packages/adlacruzes/composer-import-scripts)
+[![Packagist](https://img.shields.io/packagist/v/adlacruzes/php-factory?style=flat-square)](https://packagist.org/packages/adlacruzes/php-factory)
 ![Github actions](https://github.com/adlacruzes/php-factory/workflows/Continuous%20Integration/badge.svg?branch=master)
 
 PHP Factory allows generating classes and arrays with default values and reduce test bloatware.
