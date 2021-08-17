@@ -1,0 +1,42 @@
+name: "Nightly Build"
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+  push:
+    paths-ignore:
+      - '**.md'
+    branches:
+      - "master"
+
+jobs:
+  tests:
+    name: "Nightly Build"
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "8.1"
+        os: [ ubuntu-latest ]
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Lock config platform PHP"
+        run: "composer config platform.php 7.2"
+
+      - name: "Install dependencies"
+        run: "composer update"
+
+      - name: "Run tests"
+        run: "composer run phpunit"
