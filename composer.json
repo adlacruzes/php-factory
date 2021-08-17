@@ -19,7 +19,6 @@
         "adlacruzes/php-base-exception": "^2"
     },
     "require-dev": {
-        "enlightn/security-checker": "^1.7",
         "ergebnis/composer-normalize": "^2.13.3",
         "friendsofphp/php-cs-fixer": "^v3.0.2",
         "phpstan/phpstan": "^0.12.83",
@@ -45,7 +44,6 @@
             "@composer-normalize",
             "@php-cs-fixer",
             "@phpstan",
-            "@security-checker",
             "@phpunit"
         ],
         "composer-normalize": "@composer normalize --dry-run",
@@ -54,7 +52,6 @@
         ],
         "php-cs-fixer": "vendor/bin/php-cs-fixer fix --dry-run --diff --verbose --show-progress=none --using-cache=yes --ansi",
         "phpstan": "vendor/bin/phpstan analyse --no-progress --ansi",
-        "phpunit": "vendor/bin/phpunit",
-        "security-checker": "vendor/bin/security-checker security:check"
+        "phpunit": "vendor/bin/phpunit"
     }
 }
