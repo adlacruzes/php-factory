@@ -42,6 +42,7 @@
     },
     "scripts": {
         "ci": [
+            "@composer validate",
             "@composer-normalize",
             "@php-cs-fixer",
             "@phpstan",
