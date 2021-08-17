@@ -14,12 +14,12 @@ class MissingParameterClass
     private $id;
 
     /**
-     * @var string | null
+     * @var string|null
      */
     private $optional;
 
     /**
-     * @var DateTime | null
+     * @var DateTime|null
      */
     private $createdAt;
 

@@ -14,7 +14,7 @@ class ValidWithOptionalClass
     private $id;
 
     /**
-     * @var string | null
+     * @var string|null
      */
     private $optional;
 
