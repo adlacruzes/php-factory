@@ -5,8 +5,12 @@ parameters:
         - src
         - tests
 
+    reportUnmatchedIgnoredErrors: false
     ignoreErrors:
         - "#^Unsafe usage of new static\\(\\)\\.$#"
+        - "#^Property Adlacruzes\\\\Factory\\\\Tests\\\\Classes\\\\MissingConstructorClass\\:\\:\\$createdAt is never written, only read\\.$#"
+        - "#^Property Adlacruzes\\\\Factory\\\\Tests\\\\Classes\\\\MissingConstructorClass\\:\\:\\$id is never written, only read\\.$#"
+        - "#^Property Adlacruzes\\\\Factory\\\\Tests\\\\Classes\\\\MissingConstructorClass\\:\\:\\$optional is never written, only read\\.$#"
 
 includes:
     - vendor/phpstan/phpstan-strict-rules/rules.neon
