@@ -68,12 +68,19 @@ abstract class Factory
      * @param array<mixed>|null $values
      * @return FactoryBuilderInterface
      * @throws \ReflectionException
+     * @throws FactoryException
      */
     private static function getBuilder(FactoryInterface $factory, array $values = null): FactoryBuilderInterface
     {
         $name = (new \ReflectionClass($factory))->getShortName();
         $builder = 'Adlacruzes\\Factory\\Builders\\' . $name . 'Builder';
 
-        return new $builder($factory, $values);
+        $factoryBuilder = new $builder($factory, $values);
+
+        if (false === ($factoryBuilder instanceof FactoryBuilderInterface)) {
+            throw new FactoryException('invalid factory builder: ' . $builder);
+        }
+
+        return $factoryBuilder;
     }
 }
