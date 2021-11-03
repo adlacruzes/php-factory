@@ -67,10 +67,7 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
         }
     }
 
-    /**
-     * @return \stdclass
-     */
-    public function create()
+    public function create(): object
     {
         $class = $this->factoryType->get()['class'];
 
@@ -83,10 +80,7 @@ final class ClassFactoryBuilder implements FactoryBuilderInterface
         return new $class(...array_values($parameters));
     }
 
-    /**
-     * @return \stdclass
-     */
-    public function createNullable()
+    public function createNullable(): object
     {
         $class = $this->factoryType->get()['class'];
 
