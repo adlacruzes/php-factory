@@ -8,6 +8,11 @@ use Adlacruzes\Factory\Factories\ArrayFactory;
 use Adlacruzes\Factory\Factories\FactoryInterface;
 use Adlacruzes\Factory\Factory;
 
+/**
+ * @method static array create(array $values = null)
+ * @method static array[] createArray(int $n = 1, array $values = null)
+ * @method static array createNullable(array $values = null)
+ */
 class ArraysFactory extends Factory
 {
     protected static function setFactory(): FactoryInterface
