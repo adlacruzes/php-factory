@@ -1,14 +1,14 @@
 {
     "name": "adlacruzes/php-factory",
-    "type": "library",
     "description": "Factories to generate classes and arrays with default values",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "factory",
         "test",
         "generate",
         "default"
     ],
-    "license": "MIT",
     "authors": [
         {
             "name": "Andrés De la Cruz Escrig"
@@ -19,16 +19,12 @@
         "adlacruzes/php-base-exception": "^2"
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.15.0",
+        "ergebnis/composer-normalize": "^2.17.0",
         "friendsofphp/php-cs-fixer": "^v3.2.1",
         "phpstan/phpstan": "^1.0.2",
         "phpstan/phpstan-phpunit": "^1.0.0",
         "phpstan/phpstan-strict-rules": "^1.0.0",
         "phpunit/phpunit": "^8.5.21 || ^9.5.10"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true
     },
     "autoload": {
         "psr-4": {
@@ -39,6 +35,10 @@
         "psr-4": {
             "Adlacruzes\\Factory\\Tests\\": "tests/"
         }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
     },
     "scripts": {
         "ci": [
